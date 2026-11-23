@@ -1,0 +1,6 @@
+__pycache__/
+*.py[cod]
+.vscode/
+
+# NetCDF inputs are larger than GitHub's 100 MB file limit.
+# datasets/
