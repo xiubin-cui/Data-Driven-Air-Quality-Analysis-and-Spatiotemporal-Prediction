@@ -2,9 +2,9 @@ from pathlib import Path
 import xarray as xr
 import pandas as pd
 
-ROOT = Path(__file__).resolve().parent
-ERA5_DIR = ROOT / "datasets" / "era5_3h_0p75"
-EAC4_DIR = ROOT / "datasets" / "eac4_pm2p5"
+ROOT = Path(__file__).resolve().parents[1]
+ERA5_DIR = ROOT / "data" / "era5_3h_0p75"
+EAC4_DIR = ROOT / "data" / "eac4_pm2p5"
 
 
 class DataSet:

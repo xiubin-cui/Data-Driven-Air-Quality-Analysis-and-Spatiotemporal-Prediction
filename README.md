@@ -43,3 +43,22 @@ python read_datasets.py
 ```
 
 This loads January 2022 and prints the first rows of the merged ERA5 and PM2.5 table.
+
+### Data Source
+
+- https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels?tab=download
+- https://ads.atmosphere.copernicus.eu/datasets/cams-global-reanalysis-eac4?tab=overview
+
+### Discussion
+
+Weak pde + 显示拉格朗日算法 （对照其他研究的模型/求解器）
+
+1. Statistical reliance 比较小, Envirmental science tipping points theory 一旦某一些参数越过了一些值，导致整个系统会出现混沌情形，导致 statistical model 不可靠，不使用半拉格朗日（隐式方程求解法）
+
+2. 弱解而非强解，采样点问题 0.75 longitude/latitude 样点，赤道附近 采样点比较远，Pole region 采样点集中
+
+积分形式更平滑，减少局部爆破点产生误差
+
+Question:
+
+模型幻觉问题：Y_predict = Y_observe , X_predict != X_observe 产生原因，模型为了拟合误差，刻意增大学习参数的比重，忽视了本应有的物理规律
